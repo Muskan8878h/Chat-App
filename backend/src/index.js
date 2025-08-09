@@ -9,7 +9,7 @@ const app=express();
 dotenv.config()
 const PORT=process.env.PORT
 
-app.use(express.json());
+app.use(express.json()); //middleware
 
 app.use("/api/auth",authRoutes)
 
