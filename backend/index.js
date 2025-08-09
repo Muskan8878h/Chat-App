@@ -1,4 +1,5 @@
-const express=require("express")
+// const express=require("express")  // used in common js
+import express from "express"
 
 const app=express();
 
