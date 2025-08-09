@@ -1,7 +1,7 @@
 // const express=require("express")  // used in common js
 import express from "express"
 
-import authRoutes from "./routes/auth.route"
+import authRoutes from "./routes/auth.route.js"
 
 const app=express();
 
