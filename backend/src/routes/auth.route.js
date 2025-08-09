@@ -2,16 +2,10 @@ import express from 'express'
 
 const router=express.Router()
 
-router.post('/signup', (req,res)=>{
-    res.send("signup route")
-})
+router.post('/signup', signup);
 
-router.post('/login', (req,res)=>{
-    res.send("login route")
-})
+router.post('/login', login);
 
-router.post('/logout', (req,res)=>{
-    res.send("logout route")
-})
+router.post('/logout', logout);
 
-export default router
+export default router;
