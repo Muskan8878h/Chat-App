@@ -18,7 +18,7 @@ export const signup=async(req,res)=>{
         }
         
         // email
-        const user=await User.findOne(email)
+        const user=await User.findOne({email})
         if(user) return res.status(400).json({message: "Email already exists"});
 
         // hash password
@@ -27,19 +27,20 @@ export const signup=async(req,res)=>{
 
         // new user data
         const newUser=new User({
-            fullName: fullName,
-            email: email,
+            // fullName:fullName, this is old version
+            fullName,
+            email,
             password: hashedPassword
         })
 
         // is there any error
         if(newUser){
             // generate JWT token here
-            generateToken(newUser._id,res)
             await newUser.save()
+            generateToken(newUser._id,res);
 
             // success
-            res.status(202).json({
+            res.status(201).json({
                 _id:newUser._id,
                 fullName: fullName,
                 email: email,
