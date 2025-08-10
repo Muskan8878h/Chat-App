@@ -11,8 +11,8 @@ import ProfilePage from './pages/ProfilePage'
 const App = () => {
   return (
     <div>
-
       <Navbar />
+      
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/signup" element={<SignUpPage />} />
