@@ -8,7 +8,16 @@ import LoginPage from './pages/LoginPage'
 import SettingsPage from './pages/SettingsPage'
 import ProfilePage from './pages/ProfilePage'
 
+import { userAuthStore } from './store/useAuthStore'
+
+
 const App = () => {
+  const {authUser,checkAuth} = userAuthStore();
+  
+  useEffect(()=>{
+    checkAuth();
+  }, [checkAuth]);
+
   return (
     <div>
       <Navbar />
